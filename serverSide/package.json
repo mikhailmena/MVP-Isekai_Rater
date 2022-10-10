@@ -1,0 +1,28 @@
+{
+  "name": "serverside",
+  "version": "1.0.0",
+  "description": "Isekai Server",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm run",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikhailmena/MVP-Isekai_Rater.git"
+  },
+  "author": "Marc Menard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikhailmena/MVP-Isekai_Rater/issues"
+  },
+  "homepage": "https://github.com/mikhailmena/MVP-Isekai_Rater#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jquery": "^3.6.1",
+    "node": "^18.10.0",
+    "pg": "^8.8.0"
+  }
+}
