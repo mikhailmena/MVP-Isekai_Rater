@@ -6,11 +6,244 @@
     <script  defer src="isekai.js"></script>
     <link href="isekai.css" rel="stylesheet">
     <script  src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@1,500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <h1>WELCOME TO ISEKAI RATER!</h1>
     
 
-    </div>
+    <div class="container">
+    
+    <p class="item">
+        Test your knowledge: Choose the rating (1-10) of the Isekai Anime from below.<br>
+    
+        If all of your ratings are correct you win a Reincarnation Badge! <br>
+        If you get 80% you will get a Silver badge etc.
+    </p>
+</div>
+<form class="form" method="post">
+    <div class="container">
+        
+        <div class="item">
+            <h2>Overlord</h2>  
 
+            <div class="middle">
+                <div class="hovertext">Overlord</div>
+            </div>
+
+            <img id="overlordimg" src="./images/Overlord.jpg" class="poster">
+            <div>
+
+            <label>Choose Rating</label>
+            <select class="rating" name="rating" id="Overlord" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                
+            </select>
+        </div>
+        </div>
+        <div class="item">
+            <h2>Sword Art Online</h2>
+            <img src="./images/SAO.jpg">
+            <div>
+            <label>Choose Rating</label>
+            <select class="rating" name="rating" id="SAO" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                
+            </select> 
+        </div>
+        </div>
+        <div class="item">
+            <h2>Wise Man's Grandchild</h2>
+            <img src="./images/WMG.jpg">
+            <div>
+            <label>Choose Rating</label>
+            <select class="rating" name="rating" id="WMG" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                
+            </select>
+        </div>
+        </div>
+        <div class="item">
+            <h2>The time I was <br> Reincarnated as a Slime</h2>
+            <img src="./images/Reincarted as a slime.jpg">
+            <div>
+            <label>Choose Rating</label>
+            <select class="rating" name="rating" id="Reincarnated" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                
+            </select>
+            </div>
+        </div>
+        <div class="item">
+            <h2>Inuyasha</h2>
+            <img src="./images/inuyasha.jpg" alt="">
+            <div>
+            <label>Choose Rating</label>
+            <select class="rating" name="rating" id="inuyasha" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                
+            </select>
+        </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="item">
+            <h2>Rise of Shield Hero</h2>
+            <img src="./images/Shidl Hero1.jpg" alt="" >
+            <div>
+            <label>Choose Rating</label>
+            <select class="rating" name="rating" id="shieldHero" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                
+            </select>
+        </div>
+        </div>
+        <div class="item">
+            <h2>Konosuba</h2>
+            <img src="./images/Konosuba.jpg" alt="">
+            <div>
+            <label>Choose Rating</label>
+            <select class="rating" name="rating" id="Konosuba" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                
+            </select>
+        </div>
+        </div>
+        <div class="item">
+            <h2>Mushoku Tensei</h2>
+            <img src="./images/Mushoku Tensei.jpg" alt="">
+            <div>
+            <label>Choose Rating</label>
+            <select class="rating" name="rating" id="Mushoku" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                
+            </select>
+        </div>
+        </div>
+        <div class="item">
+            <h2>Saga of Tanya the Evil</h2>
+            <img src="./images/Saga of tanya the evil.jpg" alt="">
+            <div>
+                <label>Choose Rating</label>
+                <select class="rating" name="rating" id="Saga" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    
+                </select>
+            </div>
+        </div>
+        <div class="item">
+            <h2></h2>
+            <h2>Arifureta</h2>
+            <img src="./images/arifureta.jpg" alt="">
+            <div>
+            <label>Choose Rating</label>
+            <select class="rating" name="rating" id="Arifureta" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                
+            </select>
+        </div>
+        </div>
+        
+
+    </div>
+    <label for="button"> User Name</label>
+    <input type="text">
+    <input type="submit" id="submitButton">SUBMIT RATINGS</button>
+</form>
+
+        <div class="text">display badge here</div>
 </body>
 </html>
