@@ -17,7 +17,7 @@ const client = new Client({
     
 });
 client.connect();
-app.get('/api/ratings', (req, res) => {
+app.get('https://isekai-api.onrender.com/api/ratings', (req, res) => {
     client.query('SELECT * FROM my_ratings').then((result) => {
        res.setHeader('Content-Type', 'application/json');
        res.send(result.rows);  
