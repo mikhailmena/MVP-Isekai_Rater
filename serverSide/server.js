@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const config = require('./config')[process.env.NODE_ENV||"dev"]
+// const config = require('./config')[process.env.NODE_ENV||"dev"]
 const {Client} = require('pg');
 // const PORT = config.port;
 app.use(cors())
