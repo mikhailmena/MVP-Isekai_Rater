@@ -18,7 +18,7 @@ const client = new Client({
 });
 client.connect();
 app.get('/api/ratings', (req, res) => {
-    client.query('SELECT * FROM comments').then((result) => {
+    client.query('SELECT * FROM my_ratings').then((result) => {
        res.setHeader('Content-Type', 'application/json');
        res.send(result.rows);  
     })
@@ -26,7 +26,7 @@ app.get('/api/ratings', (req, res) => {
 
 app.post('/api/ratings', (req, res) => {
     let newComment = req.body
-    client.query("INSERT INTO comments(description) VALUES ($1);",[newComment.description]).then((data)=>{
+    client.query("INSERT INTO my_ratings(description) VALUES ($1);",[newComment.description]).then((data)=>{
         res.send(newComment)
         
     });
@@ -34,7 +34,7 @@ app.post('/api/ratings', (req, res) => {
 
 app.delete('/api/ratings',(req, res)=>{
     let id = req.body.id; 
-    client.query('DELETE FROM memo_table WHERE memo_id = $1',[id]).then((data) =>{
+    client.query('DELETE FROM my_ratings WHERE memo_id = $1',[id]).then((data) =>{
         
         res.send()
     })

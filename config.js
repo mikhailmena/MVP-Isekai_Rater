@@ -1,6 +1,6 @@
 module.exports = {
     dev:{
-        connectionString: 'postgres://postgres:docker@localhost:5432/memo_db',
+        connectionString: 'postgres://isekaidb_user:RLsF1COjLO1kay2bRSBuFQuwuDKvkUzd@dpg-cd25l0aen0hm1tsdiimg-a.oregon-postgres.render.com/isekaidb',
         port: '8000'
     },
     production:{
