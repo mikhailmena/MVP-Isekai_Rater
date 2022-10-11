@@ -2,7 +2,7 @@ $.get("https://isekai-api.onrender.com/api/ratings", (data) => {
     console.log(data)
     
     for (let i =0; i < data.length; i++){
-        $('#display').prepend(data[i].description)
+        $('#display').prepend(data)
     }
      //prepends data from get call to display ---- I need to make a for loop to display all of it
 });
@@ -44,7 +44,7 @@ formSub.addEventListener('submit', event => {
     // console.log(ratingObject)
     // console.log(formData)
     // console.log(formInput)
-    fetch('https://isekai-api.onrender.com/api/ratings', {method: 'POST', headers: {'Content-Type':'application/json'}
+    fetch('https://isekai-api.onrender.com', {method: 'POST', headers: {'Content-Type':'application/json'}
     ,body: JSON.stringify(formInput)}) //turns the form data into a string
     .then(response => {
     $('#display').append(formInput) //appends stringified form data to display div

@@ -17,20 +17,20 @@ const client = new Client({
     
 });
 client.connect();
-app.get('https://isekai-api.onrender.com/api/ratings', (req, res) => {
+app.get('/api/ratings', (req, res) => {
     client.query('SELECT * FROM my_ratings').then((result) => {
        res.setHeader('Content-Type', 'application/json');
        res.send(result.rows);  
     })
 })
 
-// app.post('/api/ratings', (req, res) => {
-//     let newComment = req.body
-//     client.query("INSERT INTO my_ratings(description) VALUES ($1);",[newComment.description]).then((data)=>{
-//         res.send(newComment)
+app.post('/api/ratings', (req, res) => {
+    let newComment = req.body
+    client.query("INSERT INTO my_ratings(description) VALUES ($1);",[newComment.description]).then((data)=>{
+        res.send(newComment)
         
-//     });
-// });
+    });
+});
 
 // app.delete('/api/ratings',(req, res)=>{
 //     let id = req.body.id; 
