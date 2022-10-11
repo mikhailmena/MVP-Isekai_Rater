@@ -24,21 +24,21 @@ app.get('/api/ratings', (req, res) => {
     })
 })
 
-app.post('/api/ratings', (req, res) => {
-    let newComment = req.body
-    client.query("INSERT INTO my_ratings(description) VALUES ($1);",[newComment.description]).then((data)=>{
-        res.send(newComment)
+// app.post('/api/ratings', (req, res) => {
+//     let newComment = req.body
+//     client.query("INSERT INTO my_ratings(description) VALUES ($1);",[newComment.description]).then((data)=>{
+//         res.send(newComment)
         
-    });
-});
+//     });
+// });
 
-app.delete('/api/ratings',(req, res)=>{
-    let id = req.body.id; 
-    client.query('DELETE FROM my_ratings WHERE memo_id = $1',[id]).then((data) =>{
+// app.delete('/api/ratings',(req, res)=>{
+//     let id = req.body.id; 
+//     client.query('DELETE FROM my_ratings WHERE memo_id = $1',[id]).then((data) =>{
         
-        res.send()
-    })
-});
+//         res.send()
+//     })
+// });
 
 
 

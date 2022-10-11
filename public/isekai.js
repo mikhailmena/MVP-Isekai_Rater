@@ -44,10 +44,10 @@ formSub.addEventListener('submit', event => {
     // console.log(ratingObject)
     // console.log(formData)
     // console.log(formInput)
-    fetch('https://express-api-7mpi.onrender.com/api/memo', {method: 'POST', headers: {'Content-Type':'application/json'}
+    fetch('https://isekai-api.onrender.com/api/ratings', {method: 'POST', headers: {'Content-Type':'application/json'}
     ,body: JSON.stringify(formInput)}) //turns the form data into a string
     .then(response => {
-    $('body').append(formInput) //appends stringified form data to display div
+    $('#display').append(formInput) //appends stringified form data to display div
     
 
 })
