@@ -80,4 +80,22 @@ img {
     border-radius: 8px;
     display: flex;
 }
-
+table {
+    color: aliceblue;
+    border: 1px solid aliceblue;
+}
+tr {
+    color: aliceblue;
+    border: 1px solid aliceblue;
+}
+th {
+    color: aliceblue;
+    border: 1px solid aliceblue;
+}
+td {
+    color: aliceblue;
+    border: 1px solid aliceblue;
+}
+div {
+    color: aliceblue;
+}

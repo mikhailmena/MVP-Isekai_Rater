@@ -239,12 +239,38 @@
         
 
     </div>
-    <label for="button"> User Name</label>
-    <input type="text">
-    <input type="submit" id="submitButton">SUBMIT RATINGS</button>
 </form>
+<div class="container">
+    <div class="item" >
+        <table id="user_rating_table">
+            <label for="user_rating_table">User Ratings</label>
+            <tr>
+                <th>IsekaiName</th>
+                <th>Rating</th>
+                
+            </tr>
 
-<div id="display">        
+        </table>
+        
+    </div>
+    <div class="item" >
+        <table id="my_rating_table">
+            <label for="my_ratting_table">My Ratings</label>
+            <tr>
+                <th>IsekaiName</th>
+                <th>Rating</th>
+            </tr>
+            
+        </table>
+        
+    </div>
+</div>
+<label for="button"> User Name</label>
+<input type="text">
+<input type="submit" id="submitButton">SUBMIT RATINGS</button>
+<button id="compare">Compare</button>  
+<button id="save">Save to Database</button> 
+<div id="savedJSON"></div>     
 <div class="text">display badge here</div>
 </body>
 </html>

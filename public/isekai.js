@@ -1,56 +1,81 @@
-$.get("https://isekai-api.onrender.com/api/ratings", (data) => {
-    console.log(data)
+const url = 'http://localhost:8002/api/ratings'
+$.get(url, (data) => { //DOT NOT CHANGE!!!!!!!!!!!!!!
+    console.log(data)    
+    var Mytable = document.getElementById('my_rating_table'); //creates table based on database
     
-    for (let i =0; i < data.length; i++){
-        $('#display').prepend(data)
+    for (var i = 0; i < data.length; i++){
+        var row = Mytable.insertRow(-1)
+        var nameCell = row.insertCell(0)
+        var ratingCell = row.insertCell(1)
+        nameCell.innerText = data[i].isekainame
+        ratingCell.innerHTML = data[i].my_rating 
     }
-     //prepends data from get call to display ---- I need to make a for loop to display all of it
+    
 });
 
 ratingObject = {
-    orverlord: 0,
+    Overlord: 0,
     SAO : 0,
     WMG : 0,
     Reincarnated : 0,
-    inuyasha : 0,
-    shieldHero: 0, 
+    Inuyasha : 0,
+    ShieldHero: 0, 
     Konosuba : 0,
     Mushoku : 0,
     Saga : 0,
     Arifureta : 0
  }
+ let compareButton = document.getElementById('compare')
+ compareButton.addEventListener('click', createTable);
+
+ var Mytable = document.getElementById('user_rating_table');
+ function createTable(){
+    for (var j = 0; j < 10; j++){
+        var urow = Mytable.insertRow(-1)
+        var unameCell = urow.insertCell(0)
+        var uratingCell = urow.insertCell(1)
+        unameCell.innerText = Object.keys(ratingObject)[j]
+        uratingCell.innerHTML = Object.values(ratingObject)[j] 
+       
+    }
+ 
+ if(Object.values(ratingObject)[j] == 0){
+            alert('Uh Oh, you missed a rating')
+}
+}
 
 const selectedRating = document.querySelectorAll('.rating'); //calls all elements with rating class
-
 selectedRating.forEach(selectDiv => { //for each element with rating class
+    var Utable = document.getElementById('user_rating_table');
     selectDiv.addEventListener('change', event => { //add event listener
-        ratingObject[`${event.target.id}`] = event.target.value
-                ratingObject[event.target.id] = event.target.value 
-                
+        ratingObject[`${event.target.id}`] = event.target.value //updates the ratingOBject values
+         
             })
 })
 
 
 
-const formSub = document.querySelector('.form');
 
+let saveDiv = document.getElementById('savedJSON')//define saveDiv
 
-formSub.addEventListener('submit', event => {
-    event.preventDefault();
-    const formData = new FormData(formSub);
-    let finalForm = Object.entries(ratingObject)
-    const formInput = Object.fromEntries(finalForm);
-    //  console.log(formSub)
-    // console.log(ratingObject)
-    // console.log(formData)
-    // console.log(formInput)
-    fetch('https://isekai-api.onrender.com', {method: 'POST', headers: {'Content-Type':'application/json'}
-    ,body: JSON.stringify(formInput)}) //turns the form data into a string
-    .then(response => {
-    $('#display').append(formInput) //appends stringified form data to display div
+let savebutton = document.getElementById('save');
+savebutton.addEventListener('click', event => {
     
+    event.preventDefault();
+    // const newArray = [ratingObject]
+    // console.log(newArray)
+    const objectData = JSON.stringify(ratingObject);
+    console.log(objectData)
+    //fetch from page
+    fetch('http://localhost:8002/api/ratings', {method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: objectData}) //turns the form data into a string
+    .then(response => {
+        
+        saveDiv.innerText = objectData //appends stringified object to display div
+        console.log(response)
 
-})
+    })
 })
 
 
@@ -62,3 +87,5 @@ formSub.addEventListener('submit', event => {
 //     //on submit, submit select input + div id to results div on bottom, push to database, and compare to my_ratings table
 
 // })
+
+
