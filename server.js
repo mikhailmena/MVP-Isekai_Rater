@@ -4,7 +4,7 @@ const app = express();
 const cors = require('cors')
 const config = require('./config')["production"||"dev"]
 const {Client} = require('pg');
-const { dev, production } = require('./config');
+
 const PORT = config.port;
 
 // ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
