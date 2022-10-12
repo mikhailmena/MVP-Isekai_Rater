@@ -5,7 +5,7 @@ const cors = require('cors')
 const config = require('./config')[process.env.NODE_ENV||"dev"]
 const {Client} = require('pg');
 const { dev } = require('./config');
-// const PORT = config.port;
+const PORT = config.port;
 
 // ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 // app.use(bodyParser())
