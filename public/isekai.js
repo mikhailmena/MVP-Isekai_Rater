@@ -1,5 +1,5 @@
 const url = 'https://isekai-api.onrender.com/api/ratings'
-$.get(url, (data) => { //DOT NOT CHANGE!!!!!!!!!!!!!!
+$.get('https://isekai-api.onrender.com/api/ratings', (data) => { //DOT NOT CHANGE!!!!!!!!!!!!!!
     console.log(data)    
     var Mytable = document.getElementById('my_rating_table'); //creates table based on database
     
@@ -12,7 +12,7 @@ $.get(url, (data) => { //DOT NOT CHANGE!!!!!!!!!!!!!!
     }
     
 });
-
+ 
 ratingObject = {
     Overlord: 0,
     SAO : 0,
@@ -64,7 +64,7 @@ savebutton.addEventListener('click', event => {
     const objectData = JSON.stringify(ratingObject);
     console.log(objectData)
     //fetch from page
-    fetch('http://localhost:8002/api/ratings', {method: 'POST',
+    fetch('https://isekai-api.onrender.com/api/ratings', {method: 'POST',
     
     body: objectData}) //turns the form data into a string
     .then(response => {
@@ -77,7 +77,7 @@ savebutton.addEventListener('click', event => {
 
 let historyBut = document.getElementById('showHistory')
 historyBut.addEventListener('click', event => {
-    $.get('http://localhost:8002/api/user/ratings', (historyData) => {
+    $.get('https://isekai-api.onrender.com/api/user/ratings', (historyData) => {
         console.log(historyData)
         var Histable = document.getElementById('HistoryTable'); //creates table based on database
     
