@@ -60,15 +60,12 @@ let saveDiv = document.getElementById('savedJSON')//define saveDiv
 
 let savebutton = document.getElementById('save');
 savebutton.addEventListener('click', event => {
-    
     event.preventDefault();
-    // const newArray = [ratingObject]
-    // console.log(newArray)
     const objectData = JSON.stringify(ratingObject);
     console.log(objectData)
     //fetch from page
     fetch('http://localhost:8002/api/ratings', {method: 'POST',
-    headers: {'Content-Type':'application/json'},
+    
     body: objectData}) //turns the form data into a string
     .then(response => {
         
@@ -78,6 +75,21 @@ savebutton.addEventListener('click', event => {
     })
 })
 
+let historyBut = document.getElementById('showHistory')
+historyBut.addEventListener('click', event => {
+    $.get('http://localhost:8002/api/user/ratings', (historyData) => {
+        console.log(historyData)
+        var Histable = document.getElementById('HistoryTable'); //creates table based on database
+    
+        for (var j = 0; j < historyData.length; j++){
+            var hrow = Histable.insertRow(-1)
+            var hnameCell = hrow.insertCell(0)
+            var hratingCell = hrow.insertCell(1)
+            hnameCell.innerText = historyData[j].isekainame
+            hratingCell.innerHTML = historyData[j].user_rating 
+        }
+})
+});
 
 
 

@@ -16,12 +16,6 @@ app.use(express.static('public'))
 const client = new Client({
     connectionString: config.connectionString
     
-    // connectionString: 'postgres://isekaidb_user:RLsF1COjLO1kay2bRSBuFQuwuDKvkUzd@dpg-cd25l0aen0hm1tsdiimg-a.oregon-postgres.render.com/isekaidb', 
-    
-    // ssl: {resolveObjectURL:false},
-    // // port: process.env.PORT
-    // port: 8002
-    
 });
 client.connect();
 app.get('/api/ratings', (req, res) => {////DO NOT CHANGE APP.GET ROUTE/////
@@ -30,12 +24,19 @@ app.get('/api/ratings', (req, res) => {////DO NOT CHANGE APP.GET ROUTE/////
        res.send(result.rows);  
     })
 })
+app.get('/api/user/ratings', (req, res) => {////DO NOT CHANGE APP.GET ROUTE/////
+    client.query('SELECT * FROM user_ratings').then((result1) => {
+       res.setHeader('Content-Type', 'application/json');
+       res.send(result1.rows);  
+    })
+})
 
-app.post('/api/ratings', (req, res) => {////DO NOT CHANGE APP.POST ROUTE////
+app.post('/api/ratings', (req, ) => {////DO NOT CHANGE APP.POST ROUTE////
+    // res.setHeader('Content-Type','application/json')
     for (let isekaiName in req.body) {//isekaiName is keys object
-        console.log(req.body[isekaiName]) //req.body[isekaiName] is values of object
-        client.query("INSERT INTO user_ratings(isekainame,user_rating) VALUES ($1,$2);",[isekaiName,req.body[isekaiName]  ]).then((data)=>{
-        res.send(req.body)
+        // console.log(req.body[isekaiName]) //req.body[isekaiName] is values of object
+        client.query("INSERT INTO user_ratings(isekainame,user_rating) VALUES ($1,$2);",[isekaiName,req.body[isekaiName]]).then((data)=>{
+        // res.send(req.body)
     
         console.log(req.body)
 
