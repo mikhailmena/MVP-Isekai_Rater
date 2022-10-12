@@ -59,10 +59,10 @@ app.post('/api/ratings', (req, ) => {////DO NOT CHANGE APP.POST ROUTE////
 
 
 
-// app.listen(PORT, () =>{
-//     console.log('Listening on port: ', PORT);
-// });
+app.listen(PORT, () =>{
+    console.log('Listening on port: ', PORT);
+});
 
-app.listen(8002, function(){
-    console.log("server is running")
-})
+// app.listen(8002, function(){
+//     console.log("server is running")
+// })
