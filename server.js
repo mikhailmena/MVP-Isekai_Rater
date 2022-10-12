@@ -2,9 +2,9 @@ const express = require('express');
 const app = express();
 // const bodyParser = require('body-parser')
 const cors = require('cors')
-const config = require('./config')[process.env.NODE_ENV||"dev"]
+const config = require('./config')[production||"dev"]
 const {Client} = require('pg');
-const { dev } = require('./config');
+const { dev, production } = require('./config');
 const PORT = config.port;
 
 // ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
