@@ -1,4 +1,4 @@
-const url = 'http://localhost:8002/api/ratings'
+const url = 'https://isekai-api.onrender.com/api/ratings'
 $.get(url, (data) => { //DOT NOT CHANGE!!!!!!!!!!!!!!
     console.log(data)    
     var Mytable = document.getElementById('my_rating_table'); //creates table based on database
