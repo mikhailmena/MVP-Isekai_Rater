@@ -73,9 +73,8 @@ let scoreButton = document.getElementById('scoreBut');
 scoreButton.addEventListener('click',scoreFunc);
 const scoreDis = document.getElementById('scoreDisplay')
 function scoreFunc(){
-    for (let h = 0; h < 10; h++){
-        
-        if (Object.values(ratingObject)[h] = Object.values(marcRatingObject)[h] ){
+    for (let h = 0; h < 10; h++){        
+        if (Object.values(ratingObject)[h] = Object.values(marcRatingObject)[h] && Object.values(ratingObject)[h] !== 0  ){
             ratingScore++ 
         }
     }
@@ -121,12 +120,12 @@ historyBut.addEventListener('click', event => {
         console.log(historyData)
         var Histable = document.getElementById('HistoryTable'); //creates table based on database
     
-        for (var j = 0; j < historyData.length; j++){
+        for (var l = 0; l < 10; l++){
             var hrow = Histable.insertRow(-1)
             var hnameCell = hrow.insertCell(0)
             var hratingCell = hrow.insertCell(1)
-            hnameCell.innerText = historyData[j].isekainame
-            hratingCell.innerHTML = historyData[j].user_rating 
+            hnameCell.innerText = historyData[l].isekainame
+            hratingCell.innerHTML = historyData[l].user_rating 
         }
 })
 });

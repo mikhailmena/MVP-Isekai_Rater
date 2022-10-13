@@ -29,7 +29,7 @@ app.get('/api/user/ratings', (req, res) => {////DO NOT CHANGE APP.GET ROUTE/////
     })
 })
 
-app.post('/api/ratings', (req, ) => {////DO NOT CHANGE APP.POST ROUTE////
+app.post('/api/user/ratings', (req, ) => {////DO NOT CHANGE APP.POST ROUTE////
     // res.setHeader('Content-Type','application/json')
     for (let isekaiName in req.body) {//isekaiName is keys object
         // console.log(req.body[isekaiName]) //req.body[isekaiName] is values of object

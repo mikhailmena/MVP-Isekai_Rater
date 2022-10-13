@@ -3,6 +3,8 @@ body {
     background-image: url("./images/anime-gif-aesthetic-6.gif");
     background-repeat: no-repeat;
     background-size: cover;
+    /* overflow: hidden; */
+    /* height: 100vh; */
 }
 .container {
     display: flex;
@@ -11,6 +13,7 @@ body {
     /* background-color:#3c4043; */
     background-color: rgba(60, 64, 67, 0.5);
 }
+
 
 .item {
     display: inline;
