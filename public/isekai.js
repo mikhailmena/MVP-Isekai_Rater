@@ -1,3 +1,15 @@
+var ratingScore = 0
+alert("Rate these Isekai Anime from (1-10) and check to see if they match Marc's Ratings!")
+
+function hideDiv(div) {
+    div.hide()
+}
+hideDiv($("#trueRating"))
+$("#MarcRating").click(function(){
+    $("#trueRating").toggle("slow")
+
+});
+
 const url = 'https://isekai-api.onrender.com/api/ratings'
 $.get('https://isekai-api.onrender.com/api/ratings', (data) => { //DOT NOT CHANGE!!!!!!!!!!!!!!
     console.log(data)    
@@ -25,8 +37,20 @@ ratingObject = {
     Saga : 0,
     Arifureta : 0
  }
- let compareButton = document.getElementById('compare')
- compareButton.addEventListener('click', createTable);
+ marcRatingObject = {
+    Overlord: 8,
+    SAO : 5,
+    WMG : 10,
+    Reincarnated : 2,
+    Inuyasha : 9,
+    ShieldHero: 4, 
+    Konosuba : 7,
+    Mushoku : 1,
+    Saga : 6,
+    Arifureta : 3
+ }
+ let submitButton = document.getElementById('submit')
+ submitButton.addEventListener('click', createTable);
 
  var Mytable = document.getElementById('user_rating_table');
  function createTable(){
@@ -38,11 +62,27 @@ ratingObject = {
         uratingCell.innerHTML = Object.values(ratingObject)[j] 
        
     }
+    
  
- if(Object.values(ratingObject)[j] == 0){
-            alert('Uh Oh, you missed a rating')
+//  if(Object.values(ratingObject)[j] == 0){
+//             alert('Uh Oh, you missed a rating')
+// }
+
 }
+let scoreButton = document.getElementById('scoreBut');
+scoreButton.addEventListener('click',scoreFunc);
+const scoreDis = document.getElementById('scoreDisplay')
+function scoreFunc(){
+    for (let h = 0; h < 10; h++){
+        
+        if (Object.values(ratingObject)[h] = Object.values(marcRatingObject)[h] ){
+            ratingScore++ 
+        }
+    }
+$("#idDisplay").append(ratingScore)
+    console.log(ratingScore)
 }
+
 
 const selectedRating = document.querySelectorAll('.rating'); //calls all elements with rating class
 selectedRating.forEach(selectDiv => { //for each element with rating class
@@ -90,6 +130,10 @@ historyBut.addEventListener('click', event => {
         }
 })
 });
+
+
+
+
 
 
 
